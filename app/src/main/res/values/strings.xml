@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Joke App</string>
+    <string name="length_count">Length: %1$s</string>
+    <string name="words_counts">Words: %1$s</string>
+    <string name="update_joke">Update Joke</string>
+    <string name="local_string">Data was fetched from local</string>
+</resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Joke"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_joke"
+            app:layout_constraintStart_toStartOf="@+id/tv_joke"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_joke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="42dp"
+            android:layout_marginTop="24dp"
+            tools:text="i am ayan malik okauy adiadoa da
+abaidbab dih
+adbadbas
+ hbaibdashbda
+adiasuhdoasbd
+"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/tv_memeLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            tools:text="Length 28"
+            app:layout_constraintEnd_toEndOf="@+id/tv_joke"
+            app:layout_constraintStart_toStartOf="@+id/tv_joke"
+            app:layout_constraintTop_toBottomOf="@+id/tv_joke" />
+
+        <TextView
+            android:id="@+id/tv_wordCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            tools:text="Words 28"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/tv_memeLength"
+            app:layout_constraintStart_toStartOf="@+id/tv_memeLength"
+            app:layout_constraintTop_toBottomOf="@+id/tv_memeLength" />
+
+        <TextView
+            android:id="@+id/tv_dataFromText"
+            :text="Data from Local database"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/local_string"
+            android:textColor="#FF0000"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/tv_memeLength"
+            app:layout_constraintStart_toStartOf="@+id/tv_memeLength"
+            app:layout_constraintTop_toBottomOf="@+id/tv_wordCount" />
+
+        <Button
+            android:id="@+id/btn_fetch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Fetch Joke"
+            app:layout_constraintEnd_toEndOf="@+id/tv_dataFromText"
+            app:layout_constraintStart_toStartOf="@+id/tv_dataFromText"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dataFromText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
