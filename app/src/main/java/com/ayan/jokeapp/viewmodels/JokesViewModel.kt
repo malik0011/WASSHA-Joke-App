@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ayan.jokeapp.models.Joke
+import com.ayan.jokeapp.services.JokeRepository
 import com.ayan.jokeapp.services.RetrofitHelper
 import com.ayan.jokeapp.utils.NetworkUtils
 import com.google.gson.Gson
@@ -18,7 +19,6 @@ class JokesViewModel(val context: Application): AndroidViewModel(context) {
 
     private val _data = MutableLiveData<Joke>()
     private val errorString = MutableLiveData<String>()
-    private val jokeApi = RetrofitHelper.getInstance()
     private var response: Response<Joke>? = null
 
     private val SHARED_PREF_NAME = "joke_prefs"
@@ -31,8 +31,9 @@ class JokesViewModel(val context: Application): AndroidViewModel(context) {
 
     suspend fun fetchJokes() {
         try {
-            response = jokeApi.getProgrammingJoke()
-            if(response!!.body() != null) {
+            val data = JokeRepository.getData() //we are getting the data from repository
+            response = data
+            if(response?.body() != null) {
                 _data.postValue(response!!.body())
             } else {
                 if (NetworkUtils.isInternetAvailable(context)) {
